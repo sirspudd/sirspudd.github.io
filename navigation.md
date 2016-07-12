@@ -1,6 +1,8 @@
 # QPi
 
-[Home](index.md)
+[Donald](index.md)
+[QPi](qpi/qpi.md)
+[Arch packages](https://aur.archlinux.org/packages/?SeB=m&K=sirspudd)
 
 [gimmick:themechooser](Choose theme)
 

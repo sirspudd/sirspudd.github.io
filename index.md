@@ -1,6 +1,4 @@
-# Chaos Reins
-
-## About
+## Chaos Reins
 
 Software consultancy company based in San Francisco
 

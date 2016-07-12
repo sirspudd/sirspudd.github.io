@@ -1,6 +1,6 @@
-# QPi
+# Chaos Reins
 
-[Donald](index.md)
+[Chaos](index.md)
 [QPi](qpi/qpi.md)
 [Arch packages](https://aur.archlinux.org/packages/?SeB=m&K=sirspudd)
 

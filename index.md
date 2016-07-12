@@ -6,3 +6,5 @@ Specializing in:
 
 * Qt
 * Linux
+
+[Contact us](sirspudd@gmail.com)

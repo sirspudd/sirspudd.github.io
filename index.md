@@ -1,10 +1,3 @@
-## Chaos Reins
+# Blog
 
-Software consultancy company based in San Francisco
-
-Specializing in:
-
-* Qt
-* Linux
-
-[Contact us](mailto:sirspudd@gmail.com)
+[Using Qt with Arch Linux and VC4 on the Raspberry Pi 2/3](blogs/vc4archpi23.md)

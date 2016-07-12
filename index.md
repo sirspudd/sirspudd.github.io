@@ -7,4 +7,4 @@ Specializing in:
 * Qt
 * Linux
 
-[Contact us](sirspudd@gmail.com)
+[Contact us](mailto:sirspudd@gmail.com)

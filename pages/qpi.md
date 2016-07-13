@@ -1,3 +1,9 @@
+---
+layout: page
+title: QPi
+permalink: /qpi/
+---
+
 # Setting up the Qt Arch SDK for the Raspberry Pi 0/1/2/3
 
 ## Overview

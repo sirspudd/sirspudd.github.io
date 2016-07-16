@@ -8,7 +8,7 @@ permalink: /about/
 
 My name is [Donald Carr](https://github.com/sirspudd/cv/raw/master/carbon/donald-carr-cv.pdf), I operate a software consultancy company based in San Francisco, specializing in:
 
-* Qt
-* (Embedded) Linux
+* Qt/QML
+* All things (Embedded) Linux
 
-If you want to ship an independent Linux appliance/device, I am a useful man to talk to. Available for short/long term contract.
+I am equally comfortable writing Qt apps, doing board bring up/integration and/or tailoring Qt to a particular SOC/hardware solution. If you want to ship an independent Linux appliance/device, I am a useful man to talk to. Available for short/long term contract.

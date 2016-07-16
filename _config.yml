@@ -17,7 +17,7 @@ baseurl: ""
 title: Chaos Reins
 
 # Short description of your site
-description: SF based Qt/Linux consultancy company
+description: San Francisco based Qt/Linux Experts for hire
 
 # --- Navigation bar options --- #
 
@@ -63,7 +63,7 @@ url-pretty: "sirspudd.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 # --- Misc --- #
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-#disqus: ""
+disqus: "sspdd"
 
 # Fill in your Google Analytics ID to track your website using GA
 #google_analytics: ""

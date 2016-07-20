@@ -6,7 +6,7 @@ permalink: /about/
 
 # Chaos Reins
 
-My name is [Donald Carr](https://github.com/sirspudd/cv/raw/master/carbon/donald-carr-cv.pdf), I operate a software consultancy company based in San Francisco, specializing in:
+My name is Donald Carr, here is my [CV](https://github.com/sirspudd/cv/raw/master/carbon/donald-carr-cv.pdf); I operate a software consultancy company based in San Francisco, specializing in:
 
 * Qt/QML
 * All things (Embedded) Linux

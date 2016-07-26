@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Chaos Reins
+title: Chaos Reins
 permalink: /about/
 ---
 

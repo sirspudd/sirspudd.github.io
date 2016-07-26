@@ -23,6 +23,8 @@ description: San Francisco based Qt/Linux Experts for hire
 
 # List of links in the navigation bar
 navbar-links:
+  CV: "https://github.com/sirspudd/cv/raw/master/carbon/donald-carr-cv.pdf"
+  Services: "services"
   AUR: "https://aur.archlinux.org/packages/?SeB=m&K=sirspudd"
   Media: "media"
   QPi: "qpi"

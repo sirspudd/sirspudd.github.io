@@ -48,10 +48,35 @@ Install weston and the mesa-dri-drivers, and weston-launch immediately starts to
 
 Turns out Qt 5.7 on the Pi is actually very sane. Copying across the cube example from qtbase, and compiling/running it on the target proves that Qt is running with full hardware acceleration. Again awesome.  Attempting to run qmlscene with a minimal QML application however crashes. Building my own Qt (Using my Arch (recipe)[https://aur.archlinux.org/packages/qt-sdk-raspberry-pi]) fares no better.
 
+Attempts at using Qt wayland as both server/client discharge with:
+
+        [root@rpi3 ~]# ./host-cube -platform wayland
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        Using Wayland-EGL
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        QObject::connect: invalid null parameter
+        Attempting to import 646x513 b8g8r8a8_unorm with unsupported stride 2592 instead of 164
+        wl_drm@19: error 2: invalid name
+        The Wayland connection experienced a fatal error (Protocol error)
+
+The server appears to be healthy, but there is something rotten in the state of the client app.
+
 # Take aways
 
 * Qt on Fedora is nicely configured and actually supports eglfs usage out of the box (Qt wayland not so much: "wl_drm@15: error 2: invalid name")
-* OpenGL ES 2/EGL work on aarch64, as does weston
+* OpenGL ES 2/EGL work on aarch64, as does weston. Qt wayland, as pure client or server/client both barf.
 
 # TODOs
 

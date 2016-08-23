@@ -90,7 +90,9 @@ The server appears to be healthy, but there is something rotten in the state of 
 
 # Updates
 
-* 08/22/2016: Turns out I am almost certainly being eaten by this: https://bugreports.qt.io/browse/QTBUG-54822 which explains why other people were also griping about Firefox bursting into flames. Turns out, someone enabled:
+## 08/22/2016
+
+Turns out I am almost certainly being eaten by this [bug](https://bugreports.qt.io/browse/QTBUG-54822) which explains why other people were also griping about Firefox bursting into flames. Turns out, someone enabled:
 
 CONFIG_ARM64_VA_BITS_48=y
 CONFIG_ARM64_VA_BITS=48
@@ -100,3 +102,19 @@ in the frigging:
 Linux rpi3 4.7.0-1-main #1 SMP PREEMPT Wed Aug 10 15:47:35 UTC 2016 aarch64 aarch64 aarch64 GNU/Linux
 
 running on this beast
+
+## 08/22/2016
+
+I have verified that CONFIG_ARM64_VA_BITS_48 was causing my grief with the Qt V4 engine barfing like a champion. In order to get a functional kernel, I had to do the following:
+
+* dnf download --source kernel-main (on Fedora image)
+* Copy this to a build machine
+* Extracted the rpm (using rpmextract.sh on Arch)
+* Unpacked the source
+* Copied the standing config from /proc/config.gz to .config
+* make ARCH=arm CROSS_COMPILE=/opt/arm-sirspuddarch-linux-gnueabihf/bin/arm-sirspuddarch-linux-gnueabihf- bcm2835_defconfig
+* make ARCH=arm64 CROSS_COMPILE=/opt/aarch64-rpi3-linux-gnueabi/bin/aarch64-rpi3-linux-gnueabi- menuconfig
+* Disabled CONFIG_ARM64_VA_BITS_48
+* Deployed, updated extlinux.conf
+
+And now Qt Quick applications are working splendidly out of the box using the Fedora packaged version of Qt. The only drawback I can see is that the QtWayland compositor functionality is not enabled, and our wayland clients are still barfing as noted above, which provides sufficient impetus to package Qt for this device.

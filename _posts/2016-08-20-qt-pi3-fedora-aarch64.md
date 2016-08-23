@@ -87,3 +87,16 @@ The server appears to be healthy, but there is something rotten in the state of 
 
 * The Fedora atomicity of packages is a bit of a mind fuck to arch users. I am used to installing a package installing the -devel package implicitly, and I am especially confounded by the granularity of packages, such as mesa, where I should just have installed the whole bloody cacophony, 22kb at a time.
 * I hope Qt 5.8 addresses what constitutes a functional/successful build. For instance, my latest build was popped out without wayland-egl support due to the absence of the associated devel package. This happened for gbm as well. This kind of debugging loop is very extended. (At least with gbm I can enforce its inclusion along with kms as of Qt 5.7)
+
+# Updates
+
+* 08/22/2016: Turns out I am almost certainly being eaten by this: https://bugreports.qt.io/browse/QTBUG-54822 which explains why other people were also griping about Firefox bursting into flames. Turns out, someone enabled:
+
+CONFIG_ARM64_VA_BITS_48=y
+CONFIG_ARM64_VA_BITS=48
+
+in the frigging:
+
+Linux rpi3 4.7.0-1-main #1 SMP PREEMPT Wed Aug 10 15:47:35 UTC 2016 aarch64 aarch64 aarch64 GNU/Linux
+
+running on this beast

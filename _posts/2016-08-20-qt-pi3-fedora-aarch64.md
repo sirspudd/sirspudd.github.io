@@ -109,7 +109,7 @@ running on this beast
 
 ## 08/22/2016
 
-I have verified that CONFIG_ARM64_VA_BITS_48 was causing my grief with the Qt V4 engine barfing like a champion. In order to get a functional kernel, I had to do the following:
+I have verified that CONFIG_ARM64_VA_BITS_48 was causing my grief with the Qt V4 engine barfing like a champion. Adjusting this also fixed standing crashes in PolicyKit. In order to get a functional kernel, I had to do the following:
 
 * dnf download --source kernel-main (on Fedora image)
 * Copy this to a build machine

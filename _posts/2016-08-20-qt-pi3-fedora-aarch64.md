@@ -6,6 +6,10 @@ published: true
 tags: [qt, pi, embedded, gl, fedora, linux, oss]
 ---
 
+# TL&DR
+
+A CONFIG_ARM64_VA_BITS_48 enabled kernel => QtQuick segfault. Fix that, and the packaged Qt 5.6 works well with the VC4 stack on Aarch64 Fedora 24, except Qt's wayland support.
+
 # Backdrop
 
 I recently learnt of a nice functional [aarch64 image](https://www.kraxel.org/blog/2016/04/fedora-on-raspberry-pi-updates/) provided for the Raspberry Pi 3. I am not overly familiar with Fedora, but I have been waiting for someone to do all the legwork and provide a nicely bootable, functional aarch64 image. (I am immensely grateful to this Kraxel dude.)
@@ -46,7 +50,7 @@ Cool. System boots. There is an error in PolicyKit, but this does not appear to 
 
 Install weston and the mesa-dri-drivers, and weston-launch immediately starts to work, proving that the system is sane and ready for further use. My goal was to build Qt since I like to control what is running, and how it is built, but establishing the state of the system provided Qt is increasingly of interest to me as desktop distros are starting to cover non-X11 centric usage in an increasingly capable fashion.
 
-Turns out Qt 5.7 on the Pi is actually very sane. Copying across the cube example from qtbase, and compiling/running it on the target proves that Qt is running with full hardware acceleration. Again awesome.  Attempting to run qmlscene with a minimal QML application however crashes. Building my own Qt (Using my Arch (recipe)[https://aur.archlinux.org/packages/qt-sdk-raspberry-pi]) fares no better.
+Turns out the shipped Qt 5.6 on the Pi is actually very sane. Copying across the cube example from qtbase, and compiling/running it on the target proves that Qt is running with full hardware acceleration. Again awesome.  Attempting to run qmlscene with a minimal QML application however crashes. Building my own Qt (Using my Arch (recipe)[https://aur.archlinux.org/packages/qt-sdk-raspberry-pi]) fares no better.
 
 Attempts at using Qt wayland as both server/client discharge with:
 
@@ -80,8 +84,8 @@ The server appears to be healthy, but there is something rotten in the state of 
 
 # TODOs
 
-* Investigate qtdeclarative crash
-* Check our own wayland
+* Investigate qtdeclarative crash (DONE, CONFIG_ARM64_VA_BITS_48 baby)
+* Investigate wayland issues
 
 # Comments
 
@@ -117,4 +121,4 @@ I have verified that CONFIG_ARM64_VA_BITS_48 was causing my grief with the Qt V4
 * Disabled CONFIG_ARM64_VA_BITS_48
 * Deployed, updated extlinux.conf
 
-And now Qt Quick applications are working splendidly out of the box using the Fedora packaged version of Qt. The only drawback I can see is that the QtWayland compositor functionality is not enabled, and our wayland clients are still barfing as noted above, which provides sufficient impetus to package Qt for this device.
+And now Qt Quick applications are working splendidly out of the box using the Fedora packaged version of Qt 5.6. The only drawback I can see is that the QtWayland compositor functionality is not enabled, and our wayland clients are still barfing as noted above, which provides sufficient impetus to package Qt for this device (for further investigation)

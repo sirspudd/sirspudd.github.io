@@ -50,7 +50,15 @@ Cool. System boots. There is an error in PolicyKit, but this does not appear to 
 
 Install weston and the mesa-dri-drivers, and weston-launch immediately starts to work, proving that the system is sane and ready for further use. My goal was to build Qt since I like to control what is running, and how it is built, but establishing the state of the system provided Qt is increasingly of interest to me as desktop distros are starting to cover non-X11 centric usage in an increasingly capable fashion.
 
-Turns out the shipped Qt 5.6 on the Pi is actually very sane. Copying across the cube example from qtbase, and compiling/running it on the target proves that Qt is running with full hardware acceleration. Again awesome.  Attempting to run qmlscene with a minimal QML application however crashes. Building my own Qt (Using my Arch (recipe)[https://aur.archlinux.org/packages/qt-sdk-raspberry-pi]) fares no better.
+Turns out the shipped Qt 5.6 on the Pi is actually very sane. Copying across the cube example from qtbase, and compiling/running it on the target with:
+
+./cube -platform eglfs
+
+proves that Qt is running with full hardware acceleration. Again awesome.  Attempting to run qmlscene:
+
+qmlscene -platform eglfs foo.qml
+
+with a minimal QML application however crashes. Building my own Qt (Using my Arch (recipe)[https://aur.archlinux.org/packages/qt-sdk-raspberry-pi]) fares no better. (Remedied as mentioned in last edit; Kernel was configured with hostile VA_48 option)
 
 Attempts at using Qt wayland as both server/client discharge with:
 
@@ -76,6 +84,10 @@ Attempts at using Qt wayland as both server/client discharge with:
         The Wayland connection experienced a fatal error (Protocol error)
 
 The server appears to be healthy, but there is something rotten in the state of the client app.
+
+# EGLFS performance
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mRHDhYVYq7A" frameborder="0" allowfullscreen></iframe>
 
 # Take aways
 
@@ -122,3 +134,5 @@ I have verified that CONFIG_ARM64_VA_BITS_48 was causing my grief with the Qt V4
 * Deployed, updated extlinux.conf
 
 And now Qt Quick applications are working splendidly out of the box using the Fedora packaged version of Qt 5.6. The only drawback I can see is that the QtWayland compositor functionality is not enabled, and our wayland clients are still barfing as noted above, which provides sufficient impetus to package Qt for this device (for further investigation)
+
+Thus far packaging Qt 5.7/5.8 for this image (using my [AUR PKGBUILD](https://aur.archlinux.org/packages/qt-sdk-raspberry-pi/)) has not yielded any functional advantage beyond the stock Fedora Qt install, beyond the advances in Qt itself. (Qt Wayland for instance still barfs)

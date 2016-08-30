@@ -133,7 +133,7 @@ I have verified that CONFIG_ARM64_VA_BITS_48 was causing my grief with the Qt V4
 * Disabled CONFIG_ARM64_VA_BITS_48 and adjust kernel as necessary
 * make ARCH=arm64 CROSS_COMPILE=/opt/aarch64-rpi3-linux-gnueabi/bin/aarch64-rpi3-linux-gnueabi-
 * INSTALL_MOD_PATH=foobar make ARCH=arm64 CROSS_COMPILE=/opt/aarch64-rpi3-linux-gnueabi/bin/aarch64-rpi3-linux-gnueabi-
-* Copy across the module directory indicated above, and the kernel
+* Copy across the module directory indicated above, and the generated kernel ./arch/arm64/boot/Image (aarch64 requires this new [Image format](https://patchwork.ozlabs.org/patch/379898/) which contains ARM64 magic)
 * Update extlinux.conf
 
 And now Qt Quick applications are working splendidly out of the box using the Fedora packaged version of Qt 5.6. The only drawback I can see is that the QtWayland compositor functionality is not enabled, and our wayland clients are still barfing as noted above, which provides sufficient impetus to package Qt for this device (for further investigation)

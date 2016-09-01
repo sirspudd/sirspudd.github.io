@@ -8,7 +8,7 @@ tags: [qt, pi, embedded, gl, arch, linux, oss]
 
 # Introduction
 
-Having found [the Fedora aarch64 image to work well](2016-08-20-qt-pi3-fedora-aarch64), I wanted to establish the same baseline with Arch Linux, purely for tribal reasons and to see what is/was required. The information contained in that entry is still gonna be of interest, since it deals with adjusting both config.txt and extlinux.conf as requires to boot the device.
+Having found [the Fedora aarch64 image to work well](http://chaos-reins.com/2016-08-20-qt-pi3-fedora-aarch64), I wanted to establish the same baseline with Arch Linux, purely for tribal reasons and to see what is/was required. The information contained in that entry is still gonna be of interest, since it deals with adjusting both config.txt and extlinux.conf as requires to boot the device.
 
 # Methodology
 

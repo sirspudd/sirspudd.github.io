@@ -18,7 +18,7 @@ This actually worked flawless, and having deployed my kernel modules to the unpa
 
 That is up until I tried to actually use the system Qt and the Qt I had compiled for the pi, at which point it became clear that the vc4 driver was absent and it was falling back to llvmpipe/software rasterization. (Launching Qt apps from ssh alerted me to this, weston-launch simply obediently launched and ran abysmally)
 
-Turns out this is entirely by (intent)[https://github.com/archlinuxarm/PKGBUILDs/blob/master/extra/mesa/PKGBUILD] where:
+Turns out this is entirely by [intent](https://github.com/archlinuxarm/PKGBUILDs/blob/master/extra/mesa/PKGBUILD) where:
 
         [[ $CARCH == "armv7h" || $CARCH == "armv6h" ]] && VC4=',vc4'
 

@@ -24,6 +24,12 @@ Turns out this is entirely by [intent](https://github.com/archlinuxarm/PKGBUILDs
 
 clearly excludes our aarch64 buddy. This is a pity as the vc4 driver builds flawlessly, and runs gloriously and I was reduced to spending the next 4 hours recompiling mesa (autotools baby) on the target. At the end of it, I was back to the shipping state of Fedora 24, and Qt could suddenly run with full OpenGL ES 2 acceleration on my aarch64 Arch install.
 
+Applications launched with
+
+        -platform eglfs
+
+performed at full speed (limited to single window applications, so no cool-retro-term) with both the distro packaged Qt 5.7 and the Qt 5.8 I explicitly built for the device. Qt based Wayland clients (launched with -platform wayland) continued to crash as they have everywhere I have tested them against the VC4 driver, and I have yet to establish how to resolve this issue.
+
 # Conclusion
 
 There is a fair amount of work from Kraxel and Eric Anholt to get this aarch64 Fedora image working, and people from the Arch community can readily benefit from this. It requires an unnecessary amount of legwork at present, and I am frankly a little surprised to see VC4 arbitrarily excluded from the aarch64 bit builds when it is fully functional.

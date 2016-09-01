@@ -8,7 +8,7 @@ tags: [qt, pi, embedded, gl, arch, linux, oss]
 
 # Introduction
 
-Having found [the Fedora aarch64 image to work well](http://chaos-reins.com/2016-08-20-qt-pi3-fedora-aarch64), I wanted to establish the same baseline with Arch Linux, purely for tribal reasons and to see what is/was required. The information contained in that entry is still gonna be of interest, since it deals with adjusting both config.txt and extlinux.conf as requires to boot the device.
+Having found [the Fedora aarch64 image to work well](http://chaos-reins.com/2016-08-20-qt-pi3-fedora-aarch64), I wanted to establish the same baseline with Arch Linux, partly in the name of newer versions on just about everything, partly for tribal reasons and also to see and document what is currently required to make this work. The information contained in the Fedora entry is still gonna be of interest, since it deals with adjusting both config.txt and extlinux.conf as requires to boot the device.
 
 # Methodology
 
@@ -18,11 +18,11 @@ This actually worked flawless, and having deployed my kernel modules to the unpa
 
 That is up until I tried to actually use the system Qt and the Qt I had compiled for the pi, at which point it became clear that the vc4 driver was absent and it was falling back to llvmpipe/software rasterization. (Launching Qt apps from ssh alerted me to this, weston-launch simply obediently launched and ran abysmally)
 
-Turns out this is entirely by (intent)[https://github.com/archlinuxarm/PKGBUILDs/blob/master/extra/mesa/PKGBUILD]where:
+Turns out this is entirely by (intent)[https://github.com/archlinuxarm/PKGBUILDs/blob/master/extra/mesa/PKGBUILD] where:
 
         [[ $CARCH == "armv7h" || $CARCH == "armv6h" ]] && VC4=',vc4'
 
-clear excludes our aarch64 buddy. This is a pity at the vc4 driver builds flawlessly, and runs gloriously and I was reduced to spending the next 4 hours recompiling mesa (autotools baby) on the target. At the end of it, I was back to the shipping state of Fedora 24, and Qt could suddenly run with full OpenGL ES 2 acceleration on my aarch64 Arch install.
+clearly excludes our aarch64 buddy. This is a pity as the vc4 driver builds flawlessly, and runs gloriously and I was reduced to spending the next 4 hours recompiling mesa (autotools baby) on the target. At the end of it, I was back to the shipping state of Fedora 24, and Qt could suddenly run with full OpenGL ES 2 acceleration on my aarch64 Arch install.
 
 # Conclusion
 

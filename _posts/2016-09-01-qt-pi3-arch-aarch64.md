@@ -12,7 +12,7 @@ Having found [the Fedora aarch64 image to work well](http://chaos-reins.com/2016
 
 # Methodology
 
-As laid out in my last blog entry, I had to recompile the kernel with CONFIG_ARM64_VA_BITS_48 unset in favour of CONFIG_ARM64_VA_BITS_39 usage. There is still some complexity with the boot setup of the pi3 which I have not managed to nail down, so I simply opted to use the boot partition from the existing Fedora image with the (Arch Linux aarch64 userspace)[https://archlinuxarm.org/platforms/armv8/generic] as provided by the Arch Linux | Arm people.
+As laid out in my last blog entry, I had to recompile the kernel with CONFIG_ARM64_VA_BITS_48 unset in favour of CONFIG_ARM64_VA_BITS_39 usage. There is still some complexity with the boot setup of the pi3 which I have not managed to nail down, so I simply opted to use the boot partition from the existing Fedora image with the (Arch Linux aarch64 userspace)[https://archlinuxarm.org/platforms/armv8/generic] as provided by the Arch Linux Arm people.
 
 This actually worked flawless, and having deployed my kernel modules to the unpacked Arch Linux rootfs I managed to immediately boot the Arch install. The only standing issue was a multitude of issues arising from the Fedora kernel not having CONFIG_SECCOMP (=y) set. Once I rebuilt the kernel with that enabled (and deployed it), everything appeared to be in good standing.
 

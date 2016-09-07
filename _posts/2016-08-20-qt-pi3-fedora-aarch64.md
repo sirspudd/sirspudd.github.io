@@ -139,3 +139,7 @@ I have verified that CONFIG_ARM64_VA_BITS_48 was causing my grief with the Qt V4
 And now Qt Quick applications are working splendidly out of the box using the Fedora packaged version of Qt 5.6. The only drawback I can see is that the QtWayland compositor functionality is not enabled, and our wayland clients are still barfing as noted above, which provides sufficient impetus to package Qt for this device (for further investigation)
 
 Thus far packaging Qt 5.7/5.8 for this image (using my [AUR PKGBUILD](https://aur.archlinux.org/packages/qt-sdk-raspberry-pi/)) has not yielded any functional advantage beyond the stock Fedora Qt install, beyond the advances in Qt itself. (Qt Wayland for instance still barfs)
+
+## 09/06/2016
+
+And the Qt developers have provided a [patch](https://codereview.qt-project.org/#/c/169892/) which resolves this against an aarch kernel with 48 bit address spacing

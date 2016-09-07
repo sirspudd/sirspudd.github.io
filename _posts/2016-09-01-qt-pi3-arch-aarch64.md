@@ -33,3 +33,7 @@ performed at full speed (limited to single window applications, so no cool-retro
 # Conclusion
 
 There is a fair amount of work from Kraxel and Eric Anholt to get this aarch64 Fedora image working, and people from the Arch community can readily benefit from this. It requires an unnecessary amount of legwork at present, and I am frankly a little surprised to see VC4 arbitrarily excluded from the aarch64 bit builds when it is fully functional.
+
+# 09/06/2016
+
+My personal QML based artwork project (which normally runs for days on a stock RPI2 Arch install) is barfing after 5 minutes on the aarch64 image. I am not sure whether it is the kernel snapshot I swiped from Kraxel's aarch64 fedora image, or my own changes to the kernel configuration, but this is not exactly a painless experience right now and kinda hard to recommend.

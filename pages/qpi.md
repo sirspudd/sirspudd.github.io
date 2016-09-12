@@ -10,25 +10,21 @@ permalink: /qpi/
 
 Qt can run quite nicely on the Pi(s), as long as you are not running it under Xorg/X11. The packaged versions of Qt run the gamut, but I have yet to see a Qt packaging which targets kms/console usage, or which has functional wayland support (outside of Intel hardware) as shipped.
 
-I have divided the packages into:
-
-Raspberry Pi 0/1/2
-
-which use the vc stack and the propietary drivers/blobs (and have CEC support)
-
-and
-
-Raspberry Pi 3
-
-which targets aarch64 and hence uses mesa.
-
 I happen to be a big fan of cross compilation rather than compilation on target, which simply removes all joy from iterative development. We provide 2 packages, one for the Raspberry Pi and one for the host machine, which once installed allow you to cross compile for the Raspberry Pi from your Arch host machine. These packages are simply tar balls, so they should even run outside of Arch in a suitably modern Linux install. (The packaging is frosting)
 
-The AUR recipes used to generate the installed packages are here (in case you are into that kind of thing):
+## Platforms
+### Raspberry Pi 0/1(armv6)2/3(armv7)
+
+uses the vc stack and the propietary drivers/blobs (and has CEC support). 2 Packages split along architectual lines.
+
+### Raspberry Pi 3 (aarch64)
+
+uses the mesa stack.
 
 ## AUR recipes
 [qt-sdk-raspberry-pi-target-libs,qt-sdk-raspberry-pi](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=qt-sdk-raspberry-pi)
 
+The AUR recipes used to generate the installed packages are here (in case you are into that kind of thing):
 I am supplying packages, which you can simply consume, or magical dangerous bash scripts which you can embrace in disdain for your sovereignty.
 
 Or you can simply proceed to making it happen by following these instructions. Clearly you proceed at your own risk, and neither myself nor my employer provide any binding guarantees or assurances. Kiss your poodle goodbye.

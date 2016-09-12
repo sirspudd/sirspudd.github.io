@@ -13,6 +13,7 @@ Qt can run quite nicely on the Pi(s), as long as you are not running it under Xo
 I happen to be a big fan of cross compilation rather than compilation on target, which simply removes all joy from iterative development. We provide 2 packages, one for the Raspberry Pi and one for the host machine, which once installed allow you to cross compile for the Raspberry Pi from your Arch host machine. These packages are simply tar balls, so they should even run outside of Arch in a suitably modern Linux install. (The packaging is frosting)
 
 ## Platforms
+
 ### Raspberry Pi 0/1(armv6)2/3(armv7)
 
 uses the vc stack and the propietary drivers/blobs (and has CEC support). 2 Packages split along architectual lines.

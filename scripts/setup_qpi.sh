@@ -5,11 +5,6 @@ set -u
 
 script_dir="$(dirname "$(readlink -f "$0")")"
 local_repo=${script_dir}/local
-rasp_pi_1=false
-
-if [[ -n "$(uname -a | grep armv6l)" ]]; then
-  rasp_pi_1=true
-fi
 
 sanity_check() {
   if [[ "$(whoami)" != "root" ]]; then
@@ -42,18 +37,25 @@ cat <<EOF >> /etc/pacman.conf
 
 [qpi]
 SigLevel = Optional
-Server = http://s3.amazonaws.com/spuddrepo/arch/\$arch
+Server = http://s3.amazonaws.com/spuddrepo/repo/\$arch
 EOF
 }
 
 setup_avahi() {
   pacman -S avahi nss-mdns --noconfirm
 
-if $rasp_pi_1; then
+case $(uname -m) in
+armv6l)
   hostnamectl set-hostname qpi
-else
+;;
+aarch64)
+  hostnamectl set-hostname qpi3
+;;
+*)
   hostnamectl set-hostname qpi2
-fi
+;;
+esac
+
   systemctl enable avahi-daemon
 }
 

@@ -12,6 +12,18 @@ Qt can run quite nicely on the Pi(s), as long as you are not running it under Xo
 
 I happen to be a big fan of cross compilation rather than compilation on target, which simply removes all joy from iterative development. We provide 2 packages, one for the Raspberry Pi and one for the host machine, which once installed allow you to cross compile for the Raspberry Pi from your Arch host machine. These packages are simply tar balls, so they should even run outside of Arch in a suitably modern Linux install. (The packaging is frosting)
 
+## State
+
+### Working
+
+Qt 5.8.0-alpha
+eglfs
+
+### Currently Defunct
+
+wayland compositing
+The compositor (API break in Qt 5.7.0)
+
 ## Platforms
 
 ### Raspberry Pi 0/1(armv6)2/3(armv7)
@@ -38,9 +50,8 @@ Or you can simply proceed to making it happen by following these instructions. C
 3. I personally normally do this by allowing root login via ssh and then grabbing the script via curl
 4. curl http://chaos-reins.com/scripts/setup_qpi.sh > setup_qpi.sh
 5. bash setup_qpi.sh
-6. I would strongly recommend increasing the video ram to 512 in /boot/config.txt (The compositor alone requires more than the default 64 due to the sexy background wave effect)
+6. I would strongly recommend increasing the video ram to 512 in /boot/config.txt (The compositor alone requires more than the default 64 due to the sexy background wave effect). When using the mesa stack (The Pi 3) the contents of config.txt are ignored, and you have to stipulate the graphical memory via a kernel commandline argument: cma=512
 7. Run this [script](http://chaos-reins.com/scripts/setup_qpi_host.sh) on your Arch host machine
-8. In order for mdns hostname resolution to work, you have to enable [this](https://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2) which I can't safely automate
-9. Mount your Arch sysroot on your host (recommend NFS, mounting "/" under /mnt/pi)
-10. You are now set to use Qt Creator to develop and deploy to your Raspberry Pi 2
-11. Please note, you might have to explicitly "test" the device in the device page of Qt Creator in order for deployment to work. (pessimistic)
+8. Mount your Arch sysroot on your host (recommend NFS, mounting "/" under /mnt/pi{version})
+9. You are now set to use Qt Creator to develop and deploy to your Raspberry Pi
+10. Please note, you might have to explicitly "test" the device in the device page of Qt Creator in order for deployment to work. (pessimistic)

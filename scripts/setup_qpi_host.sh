@@ -23,7 +23,7 @@ cat <<EOF >> /etc/pacman.conf
 
 [qpi]
 SigLevel = Optional
-Server = http://s3.amazonaws.com/spuddrepo/arch/\$arch
+Server = http://s3.amazonaws.com/spuddrepo/repo/\$arch
 EOF
 }
 
@@ -31,4 +31,8 @@ sanity_check
 # Add our arch repo
 install_qpi_repo
 pacman -Sy
-pacman -S qt-sdk-raspberry-pi2 --noconfirm
+
+echo "Add qpi repo"
+echo "Available packages"
+pacman -Sl qpi
+echo "Install qt-sdk-raspberry-pi[1/2/3] as desired"

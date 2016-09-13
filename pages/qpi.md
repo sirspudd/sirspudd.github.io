@@ -24,6 +24,11 @@ eglfs
 wayland compositing
 The compositor (API break in Qt 5.7.0)
 
+## Protips
+
+* Don't touch aarch64 at this point in time (severe stability issues). Use the raspberry pi 2 stuff on the raspberry pi 3.
+* Allocate lots of graphical memory if you intend to run GLES2 apps. The default settings are hostile to this.
+
 ## Platforms
 
 ### Raspberry Pi 0/1(armv6)2/3(armv7)

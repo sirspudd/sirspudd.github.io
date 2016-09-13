@@ -12,7 +12,7 @@ sanity_check() {
     exit -1
   fi
 
-  if [[ -z "$(uname -a | grep arm)" ]]; then
+  if [[ -n "$(uname -a | grep x86)" ]]; then
     echo "This script is intended for the pi, not the host"
     exit -1
   fi

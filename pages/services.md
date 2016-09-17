@@ -4,8 +4,6 @@ title: Services
 permalink: /services/
 ---
 
-# Consultancy
-
 * End to end Qt/QML/C++ application development
 * Qt hardware integration
 * Embedded board bring up

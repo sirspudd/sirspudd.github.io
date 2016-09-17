@@ -4,42 +4,43 @@ title: QPi
 permalink: /qpi/
 ---
 
-# Setting up the Qt Arch SDK for the Raspberry Pi 0/1/2/3
+# Overview
 
-## Overview
+QPi is an attempt to create a covenient Qt SDK for the Raspberry Pi 0/1/2/3 on Arch Linux. (Associated [video](https://www.youtube.com/watch?v=vNMQMlucKco) detailing creation of SDK.) The primary goal is to ensure full functionality of Qt on the Raspberry Pi, and to ease the overhead/complexity of cross compilation from desktop Arch installs to Arch based Raspberry Pis.
 
 Qt can run quite nicely on the Pi(s), as long as you are not running it under Xorg/X11. The packaged versions of Qt run the gamut, but I have yet to see a Qt packaging which targets kms/console usage, or which has functional wayland support (outside of Intel hardware) as shipped.
 
 I happen to be a big fan of cross compilation rather than compilation on target, which simply removes all joy from iterative development. We provide 2 packages, one for the Raspberry Pi and one for the host machine, which once installed allow you to cross compile for the Raspberry Pi from your Arch host machine. These packages are simply tar balls, so they should even run outside of Arch in a suitably modern Linux install. (The packaging is frosting)
 
-## State
+# Project Status
 
-### Working
+## Working
 
 Qt 5.8.0-alpha
 eglfs
+Qt Creator integration
 
-### Currently Defunct
+## Currently Defunct
 
 wayland compositing
 The compositor (API break in Qt 5.7.0)
 
-## Protips
+# Tips
 
 * Don't touch aarch64 at this point in time (severe stability issues). Use the raspberry pi 2 stuff on the raspberry pi 3.
 * Allocate lots of graphical memory if you intend to run GLES2 apps. The default settings are hostile to this.
 
-## Platforms
+# Platforms
 
-### Raspberry Pi 0/1(armv6)2/3(armv7)
+## Raspberry Pi 0/1(armv6)2/3(armv7)
 
 uses the vc stack and the propietary drivers/blobs (and has CEC support). 2 Packages split along architectual lines.
 
-### Raspberry Pi 3 (aarch64)
+## Raspberry Pi 3 (aarch64)
 
 uses the mesa stack.
 
-## AUR recipes
+# AUR recipes
 [qt-sdk-raspberry-pi-target-libs,qt-sdk-raspberry-pi](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=qt-sdk-raspberry-pi)
 
 The AUR recipes used to generate the installed packages are here (in case you are into that kind of thing):
@@ -47,7 +48,7 @@ I am supplying packages, which you can simply consume, or magical dangerous bash
 
 Or you can simply proceed to making it happen by following these instructions. Clearly you proceed at your own risk, and neither myself nor my employer provide any binding guarantees or assurances. Kiss your poodle goodbye.
 
-## Instructions
+# Instructions
 
 0. [Install the appropriate Arch on a fresh sd card](https://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2)
 1. Boot the Raspberry Pi

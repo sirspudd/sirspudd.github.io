@@ -132,7 +132,7 @@ I have verified that CONFIG_ARM64_VA_BITS_48 was causing my grief with the Qt V4
 * make ARCH=arm64 CROSS_COMPILE=/opt/aarch64-rpi3-linux-gnueabi/bin/aarch64-rpi3-linux-gnueabi- menuconfig
 * Disabled CONFIG_ARM64_VA_BITS_48 and adjust kernel as necessary
 * make ARCH=arm64 CROSS_COMPILE=/opt/aarch64-rpi3-linux-gnueabi/bin/aarch64-rpi3-linux-gnueabi-
-* INSTALL_MOD_PATH=foobar make ARCH=arm64 CROSS_COMPILE=/opt/aarch64-rpi3-linux-gnueabi/bin/aarch64-rpi3-linux-gnueabi-
+* INSTALL_MOD_PATH=foobar make ARCH=arm64 CROSS_COMPILE=/opt/aarch64-rpi3-linux-gnueabi/bin/aarch64-rpi3-linux-gnueabi- modules_install
 * Copy across the module directory indicated above, and the generated kernel ./arch/arm64/boot/Image (aarch64 requires this new [Image format](https://patchwork.ozlabs.org/patch/379898/) which contains ARM64 magic)
 * Update extlinux.conf
 

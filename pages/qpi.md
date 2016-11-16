@@ -16,7 +16,7 @@ I happen to be a big fan of cross compilation rather than compilation on target,
 
 ## Working
 
-Qt 5.8.0-alpha
+Qt 5.8.0-beta
 eglfs
 Qt Creator integration
 

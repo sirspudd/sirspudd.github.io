@@ -11,3 +11,4 @@ permalink: /qcec/
 * QCEC is packaged as part of the QPi Arch Linux repo for the Raspberry Pi series of devices.
 * Don't expect CEC to work in conjunction with an arbitrary HDMI hub
 * If code quality improves, I might attempt to upstream this. That said, there is now official API in the kernel for HDMI-CEC, which might provide a better/cleaner interface for our needs.
+* This has currently been tested and found to function on 2 TVs, and appears to crash standard monitors. (If the plugin is loaded)

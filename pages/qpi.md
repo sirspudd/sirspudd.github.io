@@ -16,14 +16,14 @@ I happen to be a big fan of cross compilation rather than compilation on target,
 
 ## Working
 
-Qt 5.8.0-beta
-eglfs
-Qt Creator integration
+* Qt 5.8.0-beta
+* eglfs
+* Qt Creator integration
 
 ## Currently Defunct
 
-wayland compositing
-The compositor (API break in Qt 5.7.0)
+* wayland compositing
+* The compositor (API break in Qt 5.7.0)
 
 # Tips
 

@@ -28,6 +28,7 @@ navbar-links:
   AUR: "https://aur.archlinux.org/packages/?SeB=m&K=sirspudd"
   Media: "media"
   QPi: "qpi"
+  QCEC: "qcec"
   History: "history"
   About: "about"
 

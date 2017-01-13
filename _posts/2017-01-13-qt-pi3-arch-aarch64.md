@@ -1,12 +1,13 @@
 ---
 layout: post
-title:  "Checking Qt on Arch Linux Aarch64 on the Raspberry Pi 3"
+title:  "Using Qt on Arch Linux aarch64 on the Raspberry Pi 3"
 date:   2017-01-13 12:10:59 -0700
 published: true
 tags: [qt, pi, embedded, gl, arch, linux, oss]
 ---
 
-# TL&DR
+# TLDR
+
 The new Arch Linux aarch64 image for the Raspberry Pi 3 requires zero adjustment in order to run single windowed Qt applications directly on the framebuffer via eglfs.
 
 # Introduction

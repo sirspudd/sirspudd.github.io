@@ -14,6 +14,19 @@ The new Arch Linux aarch64 image for the Raspberry Pi 3 requires zero adjustment
 
 The Arch Linux aarch64 image used to require some [fiddling](http://chaos-reins.com/2016-09-01-qt-pi3-arch-aarch64/) to hit functionality. Now that there is an official [Arch pi image](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3) for aarch64, I decided to give it a bash.
 
+# Development
+
+If cross compiling against this root image, be aware of fully qualified symlinks:
+
+[root@qpi3 ~]# ls -la /lib/libGLESv2.so.2.0.0
+lrwxrwxrwx 1 root root 32 Jan  7 03:25 /lib/libGLESv2.so.2.0.0 -> /usr/lib/mesa/libGLESv2.so.2.0.0
+
+which will contaminate your compile with host libs and make your Qt tests barf in a hard to debug fashion. I personally use the [symlinks](https://github.com/brandt/symlinks) rather than hacking together my own bash scripts.
+
+symlinks -c /lib
+
+and you are done.
+
 # Conclusion
 
 There is not a hell of a lot to relate.

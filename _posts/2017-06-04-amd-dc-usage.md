@@ -23,7 +23,7 @@ I don't know of a single centralized source of information on how to consume the
 * git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 * git remote add alex git://people.freedesktop.org/~agd5f/linux
 * The kernel moves quickly, but dumping the source code into the right location is working for me, so what I would advocate. For 4.12, drm-next-4.13-wip is the branch we want to be rummaging in. If you feel less like putting out fires, you might want to go with 4.11 or whatever the last stable release is/was.
-* [The full list of touched files](#Appendix). This resolves down to 3 paths
+* [The full list of touched files](#appendix). This resolves down to 3 paths
 
     * drivers/gpu/drm
     * include/drm

@@ -46,7 +46,7 @@ setup_avahi() {
 
 case $(uname -m) in
 armv6l)
-  hostnamectl set-hostname qpi
+  hostnamectl set-hostname qpi1
 ;;
 aarch64)
   hostnamectl set-hostname qpi3

@@ -88,6 +88,6 @@ allow_root_login_ssh
 # Add our arch repo
 install_qpi_repo
 pacman -Sy
-pacman -S artriculate --noconfirm
+pacman -S pi-compositor --noconfirm
 
-systemctl enable pi-launcher@root
+systemctl enable pi-compositor@root

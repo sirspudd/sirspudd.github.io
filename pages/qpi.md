@@ -28,7 +28,7 @@ I happen to be a big fan of cross compilation rather than compilation on target,
 
 # Project Status
 
-* Qt 5.9.0
+* Qt 5.9.0 is fully functional on the Raspberry Pi 1/2
 * CEC input support is currently alpha
 
 # Known issues
@@ -36,6 +36,13 @@ I happen to be a big fan of cross compilation rather than compilation on target,
 * Single applications can run well with eglfs at 1080p. I have not been able to get wayland working well on the Raspberry Pi at anything other than 720p.
 * aarch64 support is barred by numerous logistic issues at present.
 * Allocate lots of graphical memory if you intend to run GLES2 apps. I allocate 512 MB on the Raspberry Pi 2 and 256 MB on the Pi Zero.
+
+# Packaging choices
+
+* Excluded Qt WebEngine (not a point of personal interest)
+* Excluded Qt Script (legacy)
+
+build from AUR if you want/need this functionality.
 
 # Platform Notes
 

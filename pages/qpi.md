@@ -33,6 +33,8 @@ I happen to be a big fan of cross compilation rather than compilation on target,
 
 # Known issues
 
+* One step is required to get remote deployment working: navigate to Tools/Options/Devices/Devices. Select Raspberry Pi # from the drop down, adjust the password as necessary and then hit the test button. Deployment will not work until you hit test, even if all the parameters are correct.
+* You need the rootfs to be available at the appropriate location. Welcome to cross compiling. Either copy it to your compile host, or compile against an nfs mount of your Raspberry Pi. Mounting the rootfs ("/") of your Raspberry Pi 2 to /mnt/pi2 (via NFS) does the task nicely.
 * Single applications can run well with eglfs at 1080p. I have not been able to get wayland working well on the Raspberry Pi at anything other than 720p.
 * aarch64 support is barred by numerous logistic issues at present.
 * Allocate lots of graphical memory if you intend to run GLES2 apps. I allocate 512 MB on the Raspberry Pi 2 and 256 MB on the Pi Zero.

@@ -88,6 +88,6 @@ allow_root_login_ssh
 # Add our arch repo
 install_qpi_repo
 pacman -Sy
-pacman -S pi-compositor --noconfirm
+pacman -S skunkjuice-git --noconfirm
 
 systemctl enable pi-compositor@root

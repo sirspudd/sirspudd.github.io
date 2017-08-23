@@ -29,7 +29,7 @@ I don't know of a single centralized source of information on how to consume the
     * include/drm
     * include/uapi/drm/amdgpu_drm.h
 
-which can be:
+* which can be:
 
     * deleted
     * then checked out of their WIP branch with: git checkout alex/amd-staging-drm-next drivers/gpu/drm (for each path)

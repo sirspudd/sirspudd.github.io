@@ -30,6 +30,7 @@ I don't know of a single centralized source of information on how to consume the
     * include/uapi/drm/amdgpu_drm.h
 
 which can be:
+
     * deleted
     * then checked out of their WIP branch with: git checkout alex/amd-staging-drm-next drivers/gpu/drm (for each path)
     * then added
@@ -43,11 +44,9 @@ Groovy, that is it; Enable DC in $(make menuconfig), [build your kernel](https:/
 
 You can bypass this crud, assume full responsibility and choke on the linux-spudd package in:
 
----
-[qpi]
-SigLevel = Optional
-Server = http://s3.amazonaws.com/spuddrepo/repo/$arch
----
+        [qpi]
+        SigLevel = Optional
+        Server = http://s3.amazonaws.com/spuddrepo/repo/$arch
 
 Clearly I assume no responsibility for any negative impact running a pre-release kernel with a pre-release driver does to anyone in your family. Go with god; you are on your own.
 

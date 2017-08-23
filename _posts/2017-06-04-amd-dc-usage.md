@@ -22,27 +22,29 @@ I don't know of a single centralized source of information on how to consume the
 
 * git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 * git remote add alex git://people.freedesktop.org/~agd5f/linux
-* The kernel moves quickly, but dumping the source code into the right location is working for me, so what I would advocate. For 4.12, drm-next-4.13-wip is the branch we want to be rummaging in. If you feel less like putting out fires, you might want to go with 4.11 or whatever the last stable release is/was.
+* The kernel moves quickly, but dumping the source code into the right location is working for me, so what I would advocate. For 4.13, amd-staging-drm-next is the branch we want to be rummaging in. If you feel less like putting out fires, you might want to simply build one of Alex's other existing branches
 * [The full list of touched files](#appendix). This resolves down to 3 paths
 
     * drivers/gpu/drm
     * include/drm
     * include/uapi/drm/amdgpu_drm.h
 
-which can be checkout with like so:
-    * git checkout alex/drm-next-4.13-wip uapi/drm (for each path)
+which can be deleted, then checked out of their WIP branch with:
+    * git checkout alex/amd-staging-drm-next drivers/gpu/drm (for each path)
 
 * You will notice I am checking out the whole gpu/drm path. This means I am grabbing all changes for all gpus from the AMD devs, which may or may not be a bright idea as I assume they have to fix shit when they introduce API breakage. Descending one more level to amdgpu did not suffice to resolve build issues, so apply a little common sense and prudence before advertising the fruits of your labour as something edible, especially for a non-AMD audience.
 
-Groovy, that is it. [Build your kernel](https://g.chaos-reins.com/Arch/linux-spudd/src/master/PKGBUILD) and away you go. Freesync may or may not be enabled on my rig, at least it is theoretically possible to get it functioning.
+Groovy, that is it; Enable DC in $(make menuconfig), [build your kernel](https://g.chaos-reins.com/Arch/linux-spudd/src/master/PKGBUILD) and away you go. Freesync may or may not be enabled on my rig, at least it is theoretically possible to get it functioning.
 
 # Or
 
 You can bypass this crud, assume full responsibility and choke on the linux-spudd package in:
 
+---
 [qpi]
 SigLevel = Optional
 Server = http://s3.amazonaws.com/spuddrepo/repo/$arch
+---
 
 Clearly I assume no responsibility for any negative impact running a pre-release kernel with a pre-release driver does to anyone in your family. Go with god; you are on your own.
 

@@ -34,7 +34,7 @@ By the author:
 
 I've reimplemented the original PWM-based 11-bit audio @48kHz as 7-bit 2nd-order Sigma-Delta modulated at 781.25kHz. The effective noise floor with this scheme approximates that of CD-quality audio DACs."
 
-Dude appears to know his shit as the link about indicates.
+Dude appears to know his shit as the link above indicates.
 
 # Functionality
 

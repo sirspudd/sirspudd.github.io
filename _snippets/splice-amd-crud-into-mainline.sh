@@ -4,7 +4,7 @@
 #I accept no responsibility for damage done by this script
 
 branch=alex/amd-staging-drm-next
-delta=(drivers/gpu/drm include/drm include/uapi/drm/amdgpu_drm.h)
+delta=(include/uapi/drm/drm_fourcc.h include/uapi/drm/drm_mode.h drivers/dma-buf/reservation.c include/linux/reservation.h drivers/gpu/drm include/drm include/uapi/drm/amdgpu_drm.h)
 affect_change=false
 
 echo "Operating in: $PWD"

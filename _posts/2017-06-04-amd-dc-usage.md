@@ -29,8 +29,11 @@ I don't know of a single centralized source of information on how to consume the
     * include/drm
     * include/uapi/drm/amdgpu_drm.h
 
-which can be deleted, then checked out of their WIP branch with:
-    * git checkout alex/amd-staging-drm-next drivers/gpu/drm (for each path)
+which can be:
+    * deleted
+    * then checked out of their WIP branch with: git checkout alex/amd-staging-drm-next drivers/gpu/drm (for each path)
+    * then added
+    * birthing this [script](snippets/splice-amd-crud-into-mainline.sh)
 
 * You will notice I am checking out the whole gpu/drm path. This means I am grabbing all changes for all gpus from the AMD devs, which may or may not be a bright idea as I assume they have to fix shit when they introduce API breakage. Descending one more level to amdgpu did not suffice to resolve build issues, so apply a little common sense and prudence before advertising the fruits of your labour as something edible, especially for a non-AMD audience.
 

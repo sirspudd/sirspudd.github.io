@@ -60,8 +60,10 @@ The sequence of steps required to make this jive on Arch on the Pi is:
 * pacman -S pulseaudio-zeroconf pulseaudio-alsa
 * useradd pulse -G audio
 * /etc/pulse/system.pa (clearly adjust for your own subnet)
+
     load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;192.168.1.0/24
     load-module module-zeroconf-publish
+
 * pulseaudio --system
 * watch out for the volume; I am using hifiberry-dacplus and analog playback boost nearly blew myself and every poor fucker out of my apartment block at 2am local time
 

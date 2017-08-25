@@ -12,7 +12,8 @@ The only thing worse than solving oddly trivial problems in Linux land is solvin
 
 # Gotchas
 
-0. [Arch wiki: audio disabled in device tree](https://wiki.archlinux.org/index.php/Raspberry_Pi#Audio)
+1. Onboard audio
+    * [Arch wiki: audio disabled in device tree](https://wiki.archlinux.org/index.php/Raspberry_Pi#Audio)
 
 The onboard audio device tree is disabled by default. Fucking awesome, and not something which comes up if you google blindly. Gotta be reading that wiki. Add:
 
@@ -20,7 +21,7 @@ dtparam=audio=on
 
 to config.txt
 
-1. [Use the new fucking code path](https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=136445)
+    * [Use the new fucking code path](https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=136445)
 
 Add:
 

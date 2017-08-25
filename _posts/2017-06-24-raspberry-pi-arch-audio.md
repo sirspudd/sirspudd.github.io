@@ -12,8 +12,9 @@ The only thing worse than solving oddly trivial problems in Linux land is solvin
 
 # Gotchas
 
-1. Onboard audio
-    * [Arch wiki: audio disabled in device tree](https://wiki.archlinux.org/index.php/Raspberry_Pi#Audio)
+## Onboard audio: disabled and suboptimal by default
+
+### [Arch wiki: audio disabled in device tree](https://wiki.archlinux.org/index.php/Raspberry_Pi#Audio)
 
 The onboard audio device tree is disabled by default. Fucking awesome, and not something which comes up if you google blindly. Gotta be reading that wiki. Add:
 
@@ -21,7 +22,7 @@ dtparam=audio=on
 
 to config.txt
 
-    * [Use the new fucking code path](https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=136445)
+### [Use the new fucking code path](https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=136445)
 
 Add:
 
@@ -47,3 +48,27 @@ Dude appears to know his shit as the link above indicates.
 * systemctl enable shairport-sync.service
 
 ### Requires: Avahi
+
+## Pulseaudio sink
+
+### Status: Kinda Just Works (TM)
+
+You can really chase you tail with Pulse. I have had it working as a sink in the past, but hit major buffering issues. Tonight I attempted to hoist a grender-resurrect (including install base-devel and attemping to build locally on a Pi, which is a cardinal sin but the kind of compromise one has to make when people show their autotools to you in 2017. I digress.) UPNP sink. Long story short, it was a ballache and went nowhere. So I attempted pulseaudio again using [this blog and a little experimentation](https://manurevah.com/blah/en/p/PulseAudio-Sound-over-the-network)
+
+The sequence of steps required to make this jive on Arch on the Pi is:
+
+* pacman -S pulseaudio-zeroconf pulseaudio-alsa
+* useradd pulse -G audio
+* /etc/pulse/system.pa (clearly adjust for your own subnet)
+    load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;192.168.1.0/24
+    load-module module-zeroconf-publish
+* pulseaudio --system
+
+Then on the host
+
+* pop open paprefs
+* Make discoverable PulseAudio network sound devices available locally
+
+Then it all just bloody works
+
+### Requires: Avahi, Pulse (This is why Poettering is my man crush along with the king penguin pimp(daddy?) himself)

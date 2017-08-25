@@ -63,12 +63,13 @@ The sequence of steps required to make this jive on Arch on the Pi is:
     load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;192.168.1.0/24
     load-module module-zeroconf-publish
 * pulseaudio --system
+* watch out for the volume; I am using hifiberry-dacplus and analog playback boost nearly blew myself and every poor fucker out of my apartment block at 2am local time
 
 Then on the host
 
 * pop open paprefs
 * Make discoverable PulseAudio network sound devices available locally
 
-Then it all just bloody works
+Then it all just bloody works. Great, now you need it daemonized. Just as well this turkey has this [blogged to a t, like a boss](https://fhackts.wordpress.com/2017/07/01/running-pulseaudio-system-wide-with-pacmd-on-arch/).
 
-### Requires: Avahi, Pulse (This is why Poettering is my man crush along with the king penguin pimp(daddy?) himself)
+### Requires: Avahi, pulseaudio, systemd (This is why Poettering is my man crush along with the king penguin pimp(daddy?) himself)

@@ -77,7 +77,7 @@ The next thing for me to do is attempt vc4 usage against the armv7 image and est
 
 I hit this for the first time:
 
-https://bugreports.qt.io/browse/QTBUG-60330
+[https://bugreports.qt.io/browse/QTBUG-60330](https://bugreports.qt.io/browse/QTBUG-60330)
 
 which warrants reading, along with all its ancillary links. It is a hoot; I am damn lucky Laszlo pulled my ass from the flames or I would have sunk more time into trying to make sense of a shit situation. The TL&DR is: "Qt <5.10 falls through the branches on surface allocation with GBM/KMS on platforms like Arch which have defaulted to compiling mesa with glvnd support. Export magic env var: EGL_PLATFORM=0x31D7 and you are fucking golden."
 

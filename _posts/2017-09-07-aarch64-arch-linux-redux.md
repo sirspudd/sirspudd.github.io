@@ -61,12 +61,14 @@ Sep 10 23:13:54 boombox kernel: alloc_contig_range: 21 callbacks suppressed
 Sep 10 23:12:06 boombox kernel: alloc_contig_range: [1017a, 1017b) PFNs busy
 Sep 10 23:12:06 boombox kernel: alloc_contig_range: [10178, 10179) PFNs busy
 Sep 10 23:12:06 boombox kernel: alloc_contig_range: [1017a, 1017b) PFNs busy
+
 ---
 
 with this earlier in the stack preceding the volley of alloc_contig_range barfs by a minute.
 
 ---
 Sep 10 22:49:09 boombox kernel: [drm:vc4_get_tiling_ioctl [vc4]] *ERROR* Failed to look up GEM BO 0
+
 ---
 
 The next thing for me to do is attempt vc4 usage against the armv7 image and establish whether this is isolated to the aarch64 one or not.

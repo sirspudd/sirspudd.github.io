@@ -58,7 +58,7 @@ proves that Qt is running with full hardware acceleration. Again awesome.  Attem
 
 qmlscene -platform eglfs foo.qml
 
-with a minimal QML application however crashes. Building my own Qt (Using my Arch (recipe)[https://aur.archlinux.org/packages/qt-sdk-raspberry-pi]) fares no better. (Remedied as mentioned in last edit; Kernel was configured with hostile VA_48 option)
+with a minimal QML application however crashes. Building my own Qt (Using my [Arch recipe](https://aur.archlinux.org/packages/qt-sdk-raspberry-pi)) fares no better. (Remedied as mentioned in last edit; Kernel was configured with hostile VA_48 option)
 
 Attempts at using Qt wayland as both server/client discharge with:
 

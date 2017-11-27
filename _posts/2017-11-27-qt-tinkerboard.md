@@ -22,10 +22,10 @@ The goal is to get Qt running well on the Tinkerboard, and to establish whether 
 
 I like to cross compile for targets against an NFS mounted sysroot. This is _greatly_ complicated by Debian's multiarch bollocks that is front and center in TinkerOS. I am building using an Arch Linux host, and rather than being able to use a standard armv7 toolchain to target TinkerOS, I eventually had to cave in and download a Linaro toolchain. (After failure to link crt(1|0).o and friends for a couple hours)
 
-* use the [symlinks](https://github.com/brandt/symlinks) tool to make all symlinks under [/usr/lib,/lib] absolute and not relative (prevent mistaken dereferencing of host libraries
-* use the latest [Linaro armv7 toolchain](https://releases.linaro.org/components/toolchain/binaries/latest/arm-linux-gnueabihf/) 
-* Install the build deps for Qt on TinkerOS
-* Install NFS server components if you want to develop against your rootfs mounted via NFS
+    * use the [symlinks](https://github.com/brandt/symlinks) tool to make all symlinks under [/usr/lib,/lib] absolute and not relative (prevent mistaken dereferencing of host libraries
+    * use the latest [Linaro armv7 toolchain](https://releases.linaro.org/components/toolchain/binaries/latest/arm-linux-gnueabihf/) 
+    * Install the build deps for Qt on TinkerOS
+    * Install NFS server components if you want to develop against your rootfs mounted via NFS
 
 ## Qt tailoring
 

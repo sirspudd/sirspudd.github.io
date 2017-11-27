@@ -18,16 +18,16 @@ Cross compiling Qt for the Tinkerboard is not novel, it largely involves setting
 
 The goal is to get Qt running well on the Tinkerboard, and to establish whether 4K rendering was readily plausible.
 
-## Conditioning the image
+# Conditioning the image
 
-I like to cross compile for targets against an NFS mounted sysroot. This is _greatly_ complicated by Debian's multiarch bollocks that is front and center in TinkerOS. I am building using an Arch Linux host, and rather than being able to use a standard armv7 toolchain to target TinkerOS, I eventually had to cave in and download a Linaro toolchain. (After failure to link crt(1|0).o and friends for a couple hours)
+I like to cross compile for targets against an NFS mounted sysroot. This is greatly complicated by Debian's multiarch bollocks that is front and center in TinkerOS. I am building using an Arch Linux host, and rather than being able to use a standard armv7 toolchain to target TinkerOS, I eventually had to cave in and download a Linaro toolchain. (After failure to link crt[1/0].o and friends for a couple hours)
 
     * use the [symlinks](https://github.com/brandt/symlinks) tool to make all symlinks under [/usr/lib,/lib] absolute and not relative (prevent mistaken dereferencing of host libraries
     * use the latest [Linaro armv7 toolchain](https://releases.linaro.org/components/toolchain/binaries/latest/arm-linux-gnueabihf/) 
     * Install the build deps for Qt on TinkerOS
     * Install NFS server components if you want to develop against your rootfs mounted via NFS
 
-## Qt tailoring
+# Qt tailoring
 
 Since I was unaware of Laszlo's prior documentation, I started to customize a mkspec for the Tinkerboard from another Mali bearing muppet in the mkspec tree. After revising through this mkspec, it boiled down to [this](https://github.com/sirspudd/mkspecs/blob/master/linux-tinker-g%2B%2B/qmake.conf) which you will note contains close to zero GPU centric tailoring, which is awesome. I settled on a slightly different set of compiler flags to Laszlo, but this is hardly grounds for scandal.
 
@@ -38,11 +38,11 @@ One vaguely filthy thing about static compilation with Qt, is that it make insta
 * The presence of .a files on an embedded device is a war crime
 * I am using LTCG/LTO, so the static libraries are immense and cross compiling off an NFS mount would be a tedious nightmare. My solution to this (and it is filthy) is to have my NFS mounted sysroot symlink to a host directory. If you are not grimacing, you are clearly not registering the filthiness of it all.
 
-## Immediate dividends
+# Immediate dividends
 
 Once the AUR recipe above had run to completion, I cross compiled (my personal artwork displaying application)[https://github.com/sirspudd/artriculate] which could immediately be launched successfully at 4K with the use of the "-platform eglfs" argument. The only issue manifested when my application crashed after apparently exhausting the default amount of memory afforded to the GPU within TinkerOS. (I set my defaults to pretty much exhausted 512 MB of GPU memory on a Raspberry Pi, which is what I normally target). After reducing the number of pixmaps to be displayed, my application was running reliably and with pretty damn solid performance.
 
-## TODO
+# TODO
 
 * Discover how to increase the amount of GPU memory on the Tinkerboard (CMA args?)
 * Blog about the impact of compiler flags on the size of the resulting binaries. I am using -Os + thumb instructions + ltcg to statically compile my (Qt Quick) application for use with the Tinkerboard. The complete static binary was ~8M before opting for LTCG/LTO, which further decreased this to 6M. I was an extremely happy camper to see a Qt Quick application punching at this size, and it provided feature parity with my old approach of shipping my application with an explicit dependency on a discrete shared Qt install which was over 100M in installed size.

@@ -40,7 +40,7 @@ One vaguely filthy thing about static compilation with Qt, is that it make insta
 
 # Immediate dividends
 
-Once the AUR recipe above had run to completion, I cross compiled (my personal artwork displaying application)[https://github.com/sirspudd/artriculate] which could immediately be launched successfully at 4K with the use of the "-platform eglfs" argument. The only issue manifested when my application crashed after apparently exhausting the default amount of memory afforded to the GPU within TinkerOS. (I set my defaults to pretty much exhausted 512 MB of GPU memory on a Raspberry Pi, which is what I normally target). After reducing the number of pixmaps to be displayed, my application was running reliably and with pretty damn solid performance.
+Once the AUR recipe above had run to completion, I cross compiled [my personal artwork displaying application](https://github.com/sirspudd/artriculate) which could immediately be launched successfully at 4K with the use of the "-platform eglfs" argument. The only issue manifested when my application crashed after apparently exhausting the default amount of memory afforded to the GPU within TinkerOS. (I set my defaults to pretty much exhausted 512 MB of GPU memory on a Raspberry Pi, which is what I normally target). After reducing the number of pixmaps to be displayed, my application was running reliably and with pretty damn solid performance.
 
 # TODO
 

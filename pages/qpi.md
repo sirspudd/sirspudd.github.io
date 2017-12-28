@@ -28,7 +28,7 @@ I happen to be a big fan of cross compilation rather than compilation on target,
 
 # Project Status
 
-* Qt 5.9.0 is fully functional on the Raspberry Pi 1/2
+* Qt 5.10.0 is fully functional on the Raspberry Pi 1/2/3 and the Tinkerboard
 * CEC input support is currently alpha
 
 # Known issues

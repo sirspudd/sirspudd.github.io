@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Evaluating hardware accelerated Qt on Fedora Linux 24 Raspberry Pi 3 (Aarch64)"
 date:   2016-08-20 12:10:59 -0700
 published: true

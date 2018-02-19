@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Getting the Raspberry Pi 2/3 working as an audio/AirPlay/Pulse sink (using Arch)"
 date:   2017-06-24 12:10:59 -0700
 published: true

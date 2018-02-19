@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Using the AMD DC/DAL/WTFBBQ code on Arch, today"
 date:   2017-06-04 12:10:59 -0700
 published: true

@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Using Qt on Arch Linux aarch64 on the Raspberry Pi 3"
 date:   2017-01-13 12:10:59 -0700
 published: true

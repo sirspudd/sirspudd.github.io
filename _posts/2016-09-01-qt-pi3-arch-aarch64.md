@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Evaluating hardware accelerated Qt on Arch Linux with Aarch64 on the Raspberry Pi 3"
 date:   2016-09-01 12:10:59 -0700
 published: true

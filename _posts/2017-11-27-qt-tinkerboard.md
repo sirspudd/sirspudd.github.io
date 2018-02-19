@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Using Qt on the Tinkerboard"
 date:   2017-11-27 12:10:59 -0700
 published: true

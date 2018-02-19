@@ -1,16 +1,13 @@
 ---
-version: 3.7.2
-name: Jekyll • Simple, blog-aware, static sites
-description: Transform your plain text into static websites and blogs
-url: https://jekyllrb.com
-repository: https://github.com/jekyll/jekyll
+name: Chaos Reins
+description: San Francisco based Qt/Linux Experts for hire
+url: "http://www.chaos-reins.com" 
+repository: git@github.com:sirspudd/sirspudd.github.io.git
 timezone: America/Los_Angeles
 twitter:
-  username: jekyllrb
-logo: "/img/logo-2x.png"
-gauges_id: 503c5af6613f5d0f19000027
+  username: sirspudd
+logo: "/img/avatar-icon.jpg"
 google_analytics_id: UA-50755011-1
-google_site_verification: onQcXpAvtHBrUI5LlroHNE_FP0b2qvFyPq7VZw36iEY
 collections:
   docs:
     permalink: "/:collection/:path/"

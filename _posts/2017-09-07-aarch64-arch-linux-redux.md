@@ -11,54 +11,56 @@ The good news is you can grab the Arch [aarch64 image](https://archlinuxarm.org/
 
 The bad news is that applications which load a lot of graphical resources will barf pretty quickly as vc4 runs out of memory.
 
-  Sep 10 23:15:12 boombox kernel: [drm:drm_atomic_helper_commit_cleanup_done [drm_kms_helper]] *ERROR* [CRTC:66:crtc-2] flip_done timed out
-  Sep 10 23:15:01 boombox kernel: alloc_contig_range: [18f00, 19f00) PFNs busy
-  Sep 10 23:14:55 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:55 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:55 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:55 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:55 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:55 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:55 boombox kernel: alloc_contig_range: 4 callbacks suppressed
-  Sep 10 23:14:40 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:40 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:40 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:40 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:40 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:40 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:40 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:40 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:40 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:40 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:40 boombox kernel: alloc_contig_range: 102 callbacks suppressed
-  Sep 10 23:14:34 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:34 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:34 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:34 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:34 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:34 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:34 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:34 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:34 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
-  Sep 10 23:14:34 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:32 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
-  Sep 10 23:14:28 boombox kernel: alloc_contig_range: [10180, 10183) PFNs busy
-  Sep 10 23:14:28 boombox kernel: alloc_contig_range: [1017c, 1017f) PFNs busy
-  Sep 10 23:14:15 boombox kernel: alloc_contig_range: [1017c, 1017f) PFNs busy
-  Sep 10 23:13:57 boombox kernel: alloc_contig_range: [10181, 10182) PFNs busy
-  Sep 10 23:13:57 boombox kernel: alloc_contig_range: [10180, 10181) PFNs busy
-  Sep 10 23:13:57 boombox kernel: alloc_contig_range: [1017f, 10180) PFNs busy
-  Sep 10 23:13:55 boombox kernel: alloc_contig_range: [10181, 10182) PFNs busy
-  Sep 10 23:13:55 boombox kernel: alloc_contig_range: [10180, 10181) PFNs busy
-  Sep 10 23:13:55 boombox kernel: alloc_contig_range: [14800, 14b6a) PFNs busy
-  Sep 10 23:13:55 boombox kernel: alloc_contig_range: [14600, 14a6a) PFNs busy
-  Sep 10 23:13:55 boombox kernel: alloc_contig_range: [14600, 1496a) PFNs busy
-  Sep 10 23:13:54 boombox kernel: alloc_contig_range: [10181, 10182) PFNs busy
-  Sep 10 23:13:54 boombox kernel: alloc_contig_range: [10180, 10181) PFNs busy
-  Sep 10 23:13:54 boombox kernel: alloc_contig_range: 21 callbacks suppressed
-  Sep 10 23:12:06 boombox kernel: alloc_contig_range: [1017a, 1017b) PFNs busy
-  Sep 10 23:12:06 boombox kernel: alloc_contig_range: [10178, 10179) PFNs busy
-  Sep 10 23:12:06 boombox kernel: alloc_contig_range: [1017a, 1017b) PFNs busy
+```
+Sep 10 23:15:12 boombox kernel: [drm:drm_atomic_helper_commit_cleanup_done [drm_kms_helper]] *ERROR* [CRTC:66:crtc-2] flip_done timed out
+Sep 10 23:15:01 boombox kernel: alloc_contig_range: [18f00, 19f00) PFNs busy
+Sep 10 23:14:55 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:55 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:55 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:55 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:55 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:55 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:55 boombox kernel: alloc_contig_range: 4 callbacks suppressed
+Sep 10 23:14:40 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:40 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:40 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:40 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:40 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:40 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:40 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:40 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:40 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:40 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:40 boombox kernel: alloc_contig_range: 102 callbacks suppressed
+Sep 10 23:14:34 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:34 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:34 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:34 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:34 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:34 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:34 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:34 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:34 boombox kernel: alloc_contig_range: [10120, 10121) PFNs busy
+Sep 10 23:14:34 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:32 boombox kernel: alloc_contig_range: [1011d, 1011e) PFNs busy
+Sep 10 23:14:28 boombox kernel: alloc_contig_range: [10180, 10183) PFNs busy
+Sep 10 23:14:28 boombox kernel: alloc_contig_range: [1017c, 1017f) PFNs busy
+Sep 10 23:14:15 boombox kernel: alloc_contig_range: [1017c, 1017f) PFNs busy
+Sep 10 23:13:57 boombox kernel: alloc_contig_range: [10181, 10182) PFNs busy
+Sep 10 23:13:57 boombox kernel: alloc_contig_range: [10180, 10181) PFNs busy
+Sep 10 23:13:57 boombox kernel: alloc_contig_range: [1017f, 10180) PFNs busy
+Sep 10 23:13:55 boombox kernel: alloc_contig_range: [10181, 10182) PFNs busy
+Sep 10 23:13:55 boombox kernel: alloc_contig_range: [10180, 10181) PFNs busy
+Sep 10 23:13:55 boombox kernel: alloc_contig_range: [14800, 14b6a) PFNs busy
+Sep 10 23:13:55 boombox kernel: alloc_contig_range: [14600, 14a6a) PFNs busy
+Sep 10 23:13:55 boombox kernel: alloc_contig_range: [14600, 1496a) PFNs busy
+Sep 10 23:13:54 boombox kernel: alloc_contig_range: [10181, 10182) PFNs busy
+Sep 10 23:13:54 boombox kernel: alloc_contig_range: [10180, 10181) PFNs busy
+Sep 10 23:13:54 boombox kernel: alloc_contig_range: 21 callbacks suppressed
+Sep 10 23:12:06 boombox kernel: alloc_contig_range: [1017a, 1017b) PFNs busy
+Sep 10 23:12:06 boombox kernel: alloc_contig_range: [10178, 10179) PFNs busy
+Sep 10 23:12:06 boombox kernel: alloc_contig_range: [1017a, 1017b) PFNs busy
+```
 
 with this earlier in the stack preceding the volley of alloc_contig_range barfs by a minute.
 

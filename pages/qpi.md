@@ -30,14 +30,17 @@ I happen to be a big fan of cross compilation rather than compilation on target,
 
 * Qt 5.10.0 is fully functional on the Raspberry Pi 1/2/3 and the Tinkerboard
 * CEC input support is currently alpha
+* I personally primarily develop against aarch64 which is now perfectly functional against the vc4 OSS driver
 
 # Known issues
 
+* VIP: if you are using the vc4 open source driver you _have_ to explicity disable the warning overlay, or the warnings trash your screen state and leave you debugging some seriously shit problems. Add avoid_warnings=2 to /boot/confix.txt on aarch64
 * One step is required to get remote deployment working: navigate to Tools/Options/Devices/Devices. Select Raspberry Pi # from the drop down, adjust the password as necessary and then hit the test button. Deployment will not work until you hit test, even if all the parameters are correct.
 * You need the rootfs to be available at the appropriate location. Welcome to cross compiling. Either copy it to your compile host, or compile against an nfs mount of your Raspberry Pi. Mounting the rootfs ("/") of your Raspberry Pi 2 to /mnt/pi2 (via NFS) does the task nicely.
 * Single applications can run well with eglfs at 1080p. I have not been able to get wayland working well on the Raspberry Pi at anything other than 720p.
-* aarch64 support is barred by numerous logistic issues at present.
 * Allocate lots of graphical memory if you intend to run GLES2 apps. I allocate 512 MB on the Raspberry Pi 2 and 256 MB on the Pi Zero.
+    * this involves adjusting config.txt against the binary driver
+    * -or- adding cma=512M@256M to your kernel cmdline (/boot/boot.txt on Arch aarch64)
 
 # Packaging choices
 

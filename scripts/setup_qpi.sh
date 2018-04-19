@@ -83,6 +83,11 @@ setup_spudd_dev_env() {
   sed -i 's/robbyrussell/random/g' ~/.zshrc || true
 }
 
+setup_shairport() {
+  pacman -S shairport-sync --noconfirm
+  systemctl enable shairport-sync
+}
+
 sanity_check
 
 # we are relying on hostname advertizing via mdns
@@ -91,8 +96,8 @@ setup_avahi
 setup_nfs
 # we are initially deploying as root from creator
 allow_root_login_ssh
-# provision my dev env
 #setup_spudd_dev_env
+#setup_shairport
 
 # Add our arch repo
 install_qpi_repo

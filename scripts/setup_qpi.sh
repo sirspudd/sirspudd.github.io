@@ -88,6 +88,11 @@ setup_shairport() {
   systemctl enable shairport-sync
 }
 
+setup_pi() {
+  echo "gpu_mem=512" >> /boot/config.txt
+  echo "#dtoverlay=hifiberry-dacplus" >> /boot/config.txt
+}
+
 sanity_check
 
 # we are relying on hostname advertizing via mdns
@@ -96,8 +101,11 @@ setup_avahi
 setup_nfs
 # we are initially deploying as root from creator
 allow_root_login_ssh
+
+# Things I enable on every pi I touch
 #setup_spudd_dev_env
 #setup_shairport
+#setup_pi
 
 # Add our arch repo
 install_qpi_repo

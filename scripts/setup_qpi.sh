@@ -44,24 +44,20 @@ EOF
 setup_avahi() {
   pacman -S avahi nss-mdns --noconfirm
 
-case $(uname -m) in
-armv6l)
-  hostnamectl set-hostname qpi1
-;;
-aarch64)
-  hostnamectl set-hostname qpi3
-;;
-*)
-  hostnamectl set-hostname qpi2
-;;
-esac
-
+  hostnamectl set-hostname qpi${pi_version}
   systemctl enable avahi-daemon
 }
 
 allow_root_login_ssh() {
   echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
   systemctl restart sshd
+}
+
+create_dangling_symlinks() {
+    # In a sane world, the whole static SDK would be host side
+    # I do not have this functioning yet; this works around this issue
+    mkdir -p /opt/qt
+    ln -s /opt/qt/qt-sdk-raspberry-pi${pi_version}-static /opt/qt/qt-sdk-raspberry-pi${pi_version}-static
 }
 
 setup_nfs() {
@@ -95,12 +91,26 @@ setup_pi() {
 
 sanity_check
 
+case $(uname -m) in
+armv6l)
+  pi_version=1
+;;
+aarch64)
+  pi_version=3
+;;
+*)
+  pi_version=2
+;;
+esac
+
 # we are relying on hostname advertizing via mdns
 setup_avahi
 # required for compilation of Qt libs on host
 setup_nfs
 # we are initially deploying as root from creator
 allow_root_login_ssh
+# create insane static symlinks back to host
+create_dangling_symlinks
 
 # Things I enable on every pi I touch
 #setup_spudd_dev_env

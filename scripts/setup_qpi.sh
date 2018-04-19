@@ -76,6 +76,13 @@ setup_nfs() {
   exportfs -arv
 }
 
+setup_spudd_dev_env() {
+  pacman -S zsh vim git --noconfirm
+  chsh -s /bin/zsh root
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  sed -i 's/robbyrussell/random/g' ~/.zshrc || true
+}
+
 sanity_check
 
 # we are relying on hostname advertizing via mdns
@@ -84,6 +91,8 @@ setup_avahi
 setup_nfs
 # we are initially deploying as root from creator
 allow_root_login_ssh
+# provision my dev env
+#setup_spudd_dev_env
 
 # Add our arch repo
 install_qpi_repo

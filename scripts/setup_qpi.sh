@@ -77,7 +77,7 @@ setup_nfs() {
 }
 
 setup_spudd_dev_env() {
-  pacman -S zsh vim git --noconfirm
+  pacman -S zsh vim git rsync --noconfirm
   chsh -s /bin/zsh root
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   sed -i 's/robbyrussell/random/g' ~/.zshrc || true
